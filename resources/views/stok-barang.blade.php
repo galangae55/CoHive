@@ -882,6 +882,55 @@
                     </div>
                   </div>
                 </div>
+                <div class ="dashboard-box">
+                     <!-- Cash In (Pendapatan) -->
+                <div class="section">
+                    <h4>Cash In (Pendapatan)</h4>
+                    <h2>Rp {{ number_format(15000000, 0, ',', '.') }}</h2>
+                    <p>Bulan Mei 2025</p>
+                </div>
+
+                <!-- Cash Out (Pengeluaran) -->
+                <div class="section">
+                    <h4>Cash Out (Pengeluaran)</h4>
+                    <h2>Rp {{ number_format(8000000, 0, ',', '.') }}</h2>
+                    <p>Bulan Mei 2025</p>
+                </div>
+
+                <!-- Profit / Loss -->
+                <div class="section">
+                    <h4 class="text-green">
+                        Laba Bulan Ini
+                    </h4>
+                    <h2>Rp {{ number_format(7000000, 0, ',', '.') }}</h2>
+                    <p>Keuntungan</p>
+                </div>
+                </div>
+
+
+
+                {{-- <!-- Cash In (Pendapatan) -->
+                <div class="section">
+                    <h4>Cash In (Pendapatan)</h4>
+                    <h2>Rp {{ number_format($cashIn, 0, ',', '.') }}</h2>
+                    <p>Bulan {{ now()->format('F Y') }}</p>
+                </div>
+
+                <!-- Cash Out (Pengeluaran) -->
+                <div class="section">
+                    <h4>Cash Out (Pengeluaran)</h4>
+                    <h2>Rp {{ number_format($cashOut, 0, ',', '.') }}</h2>
+                    <p>Bulan {{ now()->format('F Y') }}</p>
+                </div>
+
+                <!-- Profit / Loss -->
+                <div class="section">
+                    <h4 class="{{ $profit < 0 ? 'text-red' : '' }}">
+                    {{ $profit < 0 ? 'Rugi' : 'Laba' }} Bulan Ini
+                    </h4>
+                    <h2>Rp {{ number_format(abs($profit), 0, ',', '.') }}</h2>
+                    <p>{{ $profit < 0 ? 'Kerugian' : 'Keuntungan' }}</p>
+                </div> --}}
 
 
             <div class="produk-container">
