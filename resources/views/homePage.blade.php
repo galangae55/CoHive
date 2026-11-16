@@ -1,40 +1,42 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>CoHive Landing - Responsive Mobile</title>
+  <title>CoHive | Kelola Operasional dalam Satu Tempat</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
   <link rel="stylesheet" href="css/homepage.css">
+  <link rel="stylesheet" href="{{ asset('css/cohive-theme.css') }}">
 </head>
-<body>
+<body class="cohive-landing">
 
   <!-- Content Utama -->
   <div class="content-container">
     <div class="content-left">
-      <h1>Why Swift UI Should Be on the Radar of Every Mobile Developer</h1>
+      <h1>Kelola operasional usaha, lebih mudah dalam satu tempat.</h1>
       <div class="note">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.
+        Atur anggota, jadwal kegiatan, persediaan barang, dan pencatatan keuangan dengan alur kerja yang lebih tertata.
       </div>
-      <a href="#">Start learning now</a>
+      <a href="{{ url('/login') }}">Mulai gunakan CoHive</a>
     </div>
     <div class="content-right">
-      <img src="IMG/Rectangle32.png" alt="Laptop Preview"/>
+      <img src="{{ asset('img/Rectangle32.png') }}" alt="Ilustrasi kerja tim secara online"/>
     </div>
   </div>
 
   <!-- Navbar -->
   <nav>
-    <a href="#" class="logo">CoHive</a>
+    <a href="{{ url('/homepage') }}" class="logo">CoHive</a>
     <ul class="nav-links">
-      <li><a href="#" style="color: #fff">Home</a></li>
-      <li><a href="#">Courses</a></li>
-      <li><a href="#">Articles</a></li>
-      <li><a href="#">About Us</a></li>
-      <div class="loginRegist">
-        <a href="#" class="login-btn">Login</a>
-        <a href="#" class="signup-btn">Sign Up</a>
-      </div>
+      <li><a href="{{ url('/homepage') }}" style="color: #fff">Beranda</a></li>
+      <li><a href="#features">Fitur</a></li>
+      <li><a href="#modules">Modul</a></li>
+      <li><a href="#about">Tentang</a></li>
+        <li class="loginRegist">
+        <a href="{{ url('/login') }}" class="login-btn">Masuk</a>
+        <a href="{{ url('/login') }}" class="signup-btn">Daftar</a>
+        </li>
     </ul>
     <div class="burger">
       <div></div>
@@ -44,45 +46,39 @@
   </nav>
 
   <!-- Section tambahan -->
-  <div class="whatIsCoHive">
-    <div class="title">
-      What is <span class="cohive">CoHive</span><span class="question">?</span>
-    </div>
+  <div class="whatIsCoHive" id="about">
+    <div class="title">Kenalan dengan <span class="cohive">CoHive</span></div>
     <div class="description">
-      TOTC adalah platform yang memungkinkan pendidik membuat kelas online, menyimpan materi, mengelola tugas, kuis, ujian, memantau tanggal, menilai, dan memberikan feedback secara terpadu.
+      CoHive adalah aplikasi pengelolaan operasional untuk membantu tim dan usaha kecil mengatur aktivitas harian. Kelola data anggota, jadwal, stok barang, dan transaksi keuangan dari satu aplikasi.
     </div>
   </div>
 
   <div class="cards-container">
-    <!-- Card Pertama (Instructors) -->
-    <div class="card instructors" onclick="handleCardClick('Instructors')">
+    <div class="card instructors">
       <div class="overlay">
-        <h2>FOR INSTRUCTORS</h2>
-        <button onclick="event.stopPropagation(); handleButtonClick('Start a class today')">
-          Start a class today
-        </button>
+        <h2>UNTUK PENGELOLA</h2>
+        <p>Atur data anggota, persediaan, agenda, dan catatan keuangan tim.</p>
+        <a href="{{ url('/login') }}">Masuk sebagai pengelola</a>
       </div>
     </div>
 
-    <!-- Card Kedua (Students) -->
-    <div class="card students" onclick="handleCardClick('Students')">
+    <div class="card students">
       <div class="overlay">
-        <h2>FOR STUDENTS</h2>
-        <button onclick="event.stopPropagation(); handleButtonClick('Enter access code')">
-          Enter access code
-        </button>
+        <h2>UNTUK ANGGOTA TIM</h2>
+        <p>Lihat informasi tim dan agenda kerja melalui satu ruang kerja bersama.</p>
+        <a href="{{ url('/login') }}">Masuk ke CoHive</a>
       </div>
     </div>
   </div>
 
-    <section class="feature-section">
+    <section class="feature-section" id="features">
         <div class="hex-container">
             <div class="hex red"></div>
             <div class="hex yellow"></div>
         </div>
         <div class="feature-content">
-            <h2>Our Features</h2>
-            <p>This very extraordinary feature can make learning activities more efficient</p>
+            <h2>Semua aktivitas penting, lebih terorganisir</h2>
+            <p>Kurangi pencatatan yang terpencar dan temukan informasi operasional tim dengan lebih cepat.</p>
         </div>
     </section>
 
@@ -97,16 +93,20 @@
         <div class="tools-wrapper">
         <!-- Bagian Teks (Kiri) -->
         <div class="tools-text">
-            <h2>Tools <span>For Leaders and Employees</span></h2>
+            <h2>Kenali <span>anggota dan profil tim</span></h2>
             <p>
-            Class has a dynamic set of teaching tools built to be deployed and used during class. Teachers can hand out assignments in real-time for students to complete and submit.
+            Simpan informasi anggota dalam satu daftar, lihat profil, dan perbarui informasi penting sesuai kebutuhan pengelolaan tim.
             </p>
         </div>
 
         <!-- Bagian Gambar (Kanan) -->
         <div class="tools-image">
-            <!-- Ganti "img/tools.png" dengan path gambar yang sudah mencakup semua elemen -->
-            <img src="img/toolsforleader.png" alt="Tools for Leaders and Employees" />
+          <div class="workflow-visual workflow-members" aria-hidden="true">
+            <div class="visual-topbar"><span></span><span></span><span></span><b>Direktori Anggota</b></div>
+            <div class="visual-member"><i class="fa-solid fa-circle-user"></i><span><b>Profil anggota</b><small>Informasi tim tersimpan rapi</small></span><i class="fa-solid fa-check"></i></div>
+            <div class="visual-member"><i class="fa-solid fa-circle-user"></i><span><b>Data kontak</b><small>Mudah ditemukan saat dibutuhkan</small></span><i class="fa-solid fa-check"></i></div>
+            <div class="visual-foot"><i class="fa-solid fa-users"></i> Data tim dalam satu tempat</div>
+          </div>
         </div>
         </div>
 
@@ -114,15 +114,20 @@
         <div class="tools-wrapper">
             <!-- Bagian Gambar (Kanan) -->
             <div class="tools-image">
-                <!-- Ganti "img/tools.png" dengan path gambar yang sudah mencakup semua elemen -->
-                <img src="img/Group 92.png" alt="Tools for Leaders and Employees" />
+              <div class="workflow-visual workflow-calendar" aria-hidden="true">
+                <div class="visual-topbar"><span></span><span></span><span></span><b>Jadwal Kegiatan</b></div>
+                <div class="visual-calendar-head"><i class="fa-regular fa-calendar"></i><b>Agenda tim</b><span>Minggu ini</span></div>
+                <div class="visual-event"><span>09:00</span><b>Rapat koordinasi</b><i class="fa-solid fa-circle"></i></div>
+                <div class="visual-event"><span>13:30</span><b>Evaluasi mingguan</b><i class="fa-solid fa-circle"></i></div>
+                <div class="visual-foot"><i class="fa-regular fa-clock"></i> Atur waktu mulai dan selesai</div>
+              </div>
             </div>
 
             <!-- Bagian Teks (Kiri) -->
             <div class="tools-text" style="padding-left: 50px;">
-                <h2 style="padding-right: 150px;">Training and<span> Certificates</span></h2>
+                <h2>Jadwal kegiatan<span> yang terkoordinasi</span></h2>
                 <p>
-                    Easily launch live assignments, quizzes, and tests. Student results are automatically entered in the online gradebook.
+                    Catat agenda, waktu mulai dan selesai, lalu lihat jadwal kegiatan dalam tampilan kalender agar tim lebih mudah menyelaraskan aktivitas.
                 </p>
             </div>
         </div>
@@ -131,135 +136,88 @@
         <div class="tools-wrapper">
         <!-- Bagian Teks (Kiri) -->
         <div class="tools-text">
-            <h2>Tools <span>For Leaders and Employees</span></h2>
+            <h2>Pantau stok dan <span>arus keuangan</span></h2>
             <p>
-            Class has a dynamic set of teaching tools built to be deployed and used during class. Teachers can hand out assignments in real-time for students to complete and submit.
+            Catat barang masuk dan keluar, pantau stok yang perlu diisi ulang, serta hubungkan pencatatan penjualan dengan transaksi keuangan.
             </p>
         </div>
 
         <!-- Bagian Gambar (Kanan) -->
         <div class="tools-image">
-            <!-- Ganti "img/tools.png" dengan path gambar yang sudah mencakup semua elemen -->
-            <img src="img/Group 124.png" alt="Tools for Leaders and Employees" />
+          <div class="workflow-visual workflow-inventory" aria-hidden="true">
+            <div class="visual-topbar"><span></span><span></span><span></span><b>Operasional</b></div>
+            <div class="visual-stat"><i class="fa-solid fa-boxes-stacked"></i><span><small>Total stok</small><b>Terpantau</b></span><i class="fa-solid fa-arrow-trend-up"></i></div>
+            <div class="visual-stat"><i class="fa-solid fa-wallet"></i><span><small>Transaksi</small><b>Tercatat rapi</b></span><i class="fa-solid fa-check"></i></div>
+            <div class="visual-foot"><i class="fa-solid fa-arrows-rotate"></i> Stok dan transaksi lebih teratur</div>
+          </div>
         </div>
         </div>
     </section>
 
-    <section class="articles-section">
+    <section class="articles-section" id="modules">
         <div class="container">
-          <!-- Header Section -->
           <div class="header">
-            <h2>Articles</h2>
-            <a href="#" class="see-all">See all</a>
+            <div>
+              <h2>Modul CoHive</h2>
+              <p class="modules-intro">Fitur yang membantu pekerjaan operasional sehari-hari.</p>
+            </div>
+            <a href="{{ url('/login') }}" class="see-all">Buka CoHive <i class="fa-solid fa-arrow-right"></i></a>
           </div>
 
-          <!-- Articles Grid -->
           <div class="grid">
-            <!-- Card 1 -->
             <div class="card-1">
               <div class="card-image">
-                <img src="img/Rectangle 33.png" alt="Article 1" />
+                <div class="module-art module-team"><i class="fa-solid fa-users" aria-hidden="true"></i></div>
               </div>
               <div class="card-body">
                 <div class="meta">
-                  <span class="category">Design</span>
-                  <span class="duration">3 Month</span>
+                  <span class="category">Tim</span>
+                  <span class="duration">Anggota</span>
                 </div>
-                <h3 class="card-title">AWS Certified Solutions Architect</h3>
-                <p class="card-desc">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                </p>
-                <div class="card-footer">
-                  <div class="author">
-                    <img src="img/me.jpg" alt="Lina" />
-                    <span>By Lina</span>
-                  </div>
-                  <div class="price">
-                    <span class="old">$100</span>
-                    <span class="new">$80</span>
-                  </div>
-                </div>
+                <h3 class="card-title">Data anggota</h3>
+                <p class="card-desc">Simpan daftar anggota dan kelola informasi profil tim dengan lebih mudah.</p>
               </div>
             </div>
 
-            <!-- Card 2 -->
             <div class="card-1">
               <div class="card-image">
-                <img src="img/Group 249.png" alt="Article 2" />
+                <div class="module-art module-calendar"><i class="fa-regular fa-calendar-check" aria-hidden="true"></i></div>
               </div>
               <div class="card-body">
                 <div class="meta">
-                  <span class="category">Development</span>
-                  <span class="duration">4 Month</span>
+                  <span class="category">Kalender</span>
+                  <span class="duration">Agenda</span>
                 </div>
-                <h3 class="card-title">Mastering JavaScript for Web</h3>
-                <p class="card-desc">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                </p>
-                <div class="card-footer">
-                  <div class="author">
-                    <img src="img/me.jpg" alt="Arif" />
-                    <span>By Arif</span>
-                  </div>
-                  <div class="price">
-                    <span class="old">$120</span>
-                    <span class="new">$90</span>
-                  </div>
-                </div>
+                <h3 class="card-title">Jadwal kegiatan</h3>
+                <p class="card-desc">Buat agenda, atur waktunya, dan lihat kegiatan tim dalam kalender.</p>
               </div>
             </div>
 
-            <!-- Card 3 -->
             <div class="card-1">
               <div class="card-image">
-                <img src="img/Rectangle32.png" alt="Article 3" />
+                <div class="module-art module-stock"><i class="fa-solid fa-boxes-stacked" aria-hidden="true"></i></div>
               </div>
               <div class="card-body">
                 <div class="meta">
-                  <span class="category">Marketing</span>
-                  <span class="duration">2 Month</span>
+                  <span class="category">Persediaan</span>
+                  <span class="duration">Inventaris</span>
                 </div>
-                <h3 class="card-title">Basic Digital Marketing Essentials</h3>
-                <p class="card-desc">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                </p>
-                <div class="card-footer">
-                  <div class="author">
-                    <img src="img/me.jpg" alt="Nia" />
-                    <span>By Nia</span>
-                  </div>
-                  <div class="price">
-                    <span class="old">$80</span>
-                    <span class="new">$60</span>
-                  </div>
-                </div>
+                <h3 class="card-title">Stok barang</h3>
+                <p class="card-desc">Kelola data produk, pantau ketersediaan, dan catat barang masuk maupun keluar.</p>
               </div>
             </div>
 
-            <!-- Card 4 -->
             <div class="card-1">
               <div class="card-image">
-                <img src="img/Rectangle 42.png" alt="Article 4" />
+                <div class="module-art module-finance"><i class="fa-solid fa-wallet" aria-hidden="true"></i></div>
               </div>
               <div class="card-body">
                 <div class="meta">
-                  <span class="category">Business</span>
-                  <span class="duration">5 Month</span>
+                  <span class="category">Keuangan</span>
+                  <span class="duration">Transaksi</span>
                 </div>
-                <h3 class="card-title">Entrepreneurship and Marketing Training</h3>
-                <p class="card-desc">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                </p>
-                <div class="card-footer">
-                  <div class="author">
-                    <img src="img/me.jpg" alt="Rizki" />
-                    <span>By Rizki</span>
-                  </div>
-                  <div class="price">
-                    <span class="old">$150</span>
-                    <span class="new">$110</span>
-                  </div>
-                </div>
+                <h3 class="card-title">Catatan keuangan</h3>
+                <p class="card-desc">Catat transaksi pemasukan dan pengeluaran berdasarkan kategori dan rekening.</p>
               </div>
             </div>
           </div><!-- .grid -->
@@ -269,20 +227,16 @@
 
     <footer class="footer">
         <h2 class="cohive-text">CoHive</h2>
-        <p class="subscribe-text">Subscribe to get our Newsletter</p>
-
-        <div class="subscribe-box">
-            <input type="email" id="email" placeholder="Your Email" />
-            <button id="subscribe-btn">Subscribe</button>
-        </div>
+        <p class="subscribe-text">Satu ruang kerja untuk mengelola aktivitas operasional tim.</p>
+        <a class="footer-cta" href="{{ url('/login') }}">Masuk dan mulai kelola CoHive <i class="fa-solid fa-arrow-right"></i></a>
 
         <ul class="footer-links">
-            <li><a href="#">Careers</a></li>
-            <li><a href="#">Privacy Policy</a></li>
-            <li><a href="#">Terms & Conditions</a></li>
+            <li><a href="#about">Tentang CoHive</a></li>
+            <li><a href="#features">Fitur</a></li>
+            <li><a href="{{ url('/login') }}">Masuk</a></li>
         </ul>
 
-        <p class="copyright">© 2025 Startup Technologies.</p>
+        <p class="copyright">© {{ date('Y') }} CoHive. Kelola tim dan operasional dengan lebih tertata.</p>
     </footer>
 
 
@@ -309,30 +263,6 @@
       });
     }
     navSlide();
-  </script>
-
-  <script>
-        document.getElementById("subscribe-btn").addEventListener("click", function() {
-            let button = this;
-            let emailInput = document.getElementById("email");
-
-            if (emailInput.value === "") {
-                alert("Please enter your email.");
-                return;
-            }
-
-            // Simulate loading effect
-            button.innerText = "Subscribing...";
-            button.disabled = true;
-
-            setTimeout(() => {
-                button.innerText = "Subscribe";
-                button.disabled = false;
-                alert("Thank you for subscribing!");
-                emailInput.value = ""; // Clear input after subscription
-            }, 2000);
-        });
-
   </script>
 
 </body>

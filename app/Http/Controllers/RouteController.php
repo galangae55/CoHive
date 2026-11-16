@@ -3,9 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Barang;
-use App\Models\keuanganAccount;
-use App\Models\KeuanganCategory;
+use App\Models\Event;
 use App\Models\KeuanganTransaction;
+use App\Models\KeuanganAccount;
+use App\Models\KeuanganCategory;
 use App\Models\Profile;
 use App\Models\User;
 use Illuminate\Support\Facades\DB;
@@ -19,12 +20,56 @@ class RouteController extends Controller
         return view('homepage');
     }
 
-    public function dashboard(){$users = Auth::user();
-        // Cari data profile, jika belum ada buat instance baru
+    public function dashboard()
+    {
+        $users = Auth::user();
         $profile = $users->profile ?? (new Profile)->fill(['user_id' => $users->id]);
+        $products = Barang::orderBy('nama_barang')->limit(5)->get();
+        $lowStockProducts = Barang::where('stok', '<=', 5)
+            ->orderBy('stok')
+            ->orderBy('nama_barang')
+            ->limit(5)
+            ->get();
+        $lowStockCount = Barang::where('stok', '<=', 5)->count();
+        $productCount = Barang::count();
+        $categoryCount = Barang::distinct('varian')->count('varian');
+        $totalStock = Barang::sum('stok');
 
+        $monthStart = now()->startOfMonth()->toDateString();
+        $monthEnd = now()->endOfMonth()->toDateString();
+        $monthlyIncome = KeuanganTransaction::whereBetween('transaction_date', [$monthStart, $monthEnd])
+            ->whereHas('category', fn ($query) => $query->where('type', 'income'))
+            ->sum('amount');
+        $monthlyExpense = KeuanganTransaction::whereBetween('transaction_date', [$monthStart, $monthEnd])
+            ->whereHas('category', fn ($query) => $query->where('type', 'expense'))
+            ->sum('amount');
 
-        return view('dashboard', compact('users', 'profile'));
+        $eventsQuery = Event::whereDate('date', '>=', today())
+            ->where(function ($query) use ($users) {
+                $query->where('visibility', 'public')
+                    ->orWhere('user_id', $users->id);
+            });
+        $upcomingEventCount = (clone $eventsQuery)->count();
+        $upcomingEvents = $eventsQuery
+            ->orderBy('date')
+            ->orderBy('start_time')
+            ->limit(5)
+            ->get();
+
+        return view('dashboard', compact(
+            'users',
+            'profile',
+            'products',
+            'lowStockProducts',
+            'lowStockCount',
+            'productCount',
+            'categoryCount',
+            'totalStock',
+            'monthlyIncome',
+            'monthlyExpense',
+            'upcomingEventCount',
+            'upcomingEvents'
+        ));
     }
 
     public function profile(){

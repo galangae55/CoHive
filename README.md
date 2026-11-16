@@ -1,66 +1,133 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# CoHive — Enterprise Workspace, Inventory & Financial Management Platform
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+![Laravel](https://img.shields.io/badge/Laravel-10.x-FF2D20?style=for-the-badge&logo=laravel&logoColor=white)
+![PHP](https://img.shields.io/badge/PHP-8.2-777BB4?style=for-the-badge&logo=php&logoColor=white)
+![SQLite](https://img.shields.io/badge/SQLite-Portable_Database-003B57?style=for-the-badge&logo=sqlite&logoColor=white)
+![Status](https://img.shields.io/badge/Status-Production_Ready-success?style=for-the-badge)
 
-## About Laravel
+**CoHive** adalah platform manajemen operasional terintegrasi yang dirancang untuk co-working space, kafe/artisan hub, dan unit usaha modern. Sistem ini mengonsolidasikan pengelolaan inventaris bahan baku & merchandise, pencatatan arus kas multi-rekening, serta koordinasi agenda tim operasional dalam satu antarmuka yang elegan, responsif, dan ergonomis.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+---
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## 📸 Dokumentasi Antarmuka & Tangkapan Layar
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### 1. Executive Dashboard & Ikhtisar Operasional
+Ringkasan metrik inventaris, indikator stok rendah, arus kas bulanan, dan agenda kerja mendatang.
+![CoHive Dashboard](file:///d:/CV/portfolio-assets/08-cohive/cohive_dashboard.png)
 
-## Learning Laravel
+### 2. Manajemen Stok Barang & Inventaris
+Katalog produk komprehensif mencakup ID barang, varian, kuantitas real-time, tanggal kadaluarsa, harga beli/jual, serta kontrol barang masuk/keluar.
+![CoHive Stok Barang](file:///d:/CV/portfolio-assets/08-cohive/cohive_stok_barang.png)
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+### 3. Pembukuan Keuangan & Multi-Rekening
+Pelacakan saldo kasir, perbankan bisnis, dan e-wallet QRIS secara transparan dengan riwayat debit/kredit per kategori.
+![CoHive Keuangan](file:///d:/CV/portfolio-assets/08-cohive/cohive_keuangan.png)
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+### 4. Gerbang Autentikasi Modern
+Formulir masuk dan registrasi karyawan dengan desain terpadu.
+![CoHive Login](file:///d:/CV/portfolio-assets/08-cohive/cohive_login.png)
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+---
 
-## Laravel Sponsors
+## 🌟 Modul & Fitur Unggulan
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+| Modul | Deskripsi Fungsi |
+| :--- | :--- |
+| **Workspace Dashboard** | Visualisasi KPI (total varian produk, stok unit tersedia, peringatan stok menipis, arus kas bulanan, dan jadwal terdekat). |
+| **Inventory Control** | Pencatatan SKU barang, varian ukuran/berat, pergerakan stok keluar/masuk, pelacakan tanggal kadaluarsa, dan histori transaksi fisik. |
+| **Multi-Account Finance** | Pengelolaan rekening terpisah (Kas Kecil, Rekening Bank Operasional, QRIS Settlement), pencatatan pendapatan & pengeluaran, serta tagging kategori transaksi. |
+| **Team Calendar & Events** | Penjadwalan shift, rapat operasional, evaluasi berkala, serta workshop publik dengan visibilitas internal/publik. |
+| **Role & Member Management** | Pembagian hak akses antara Administrator dan Karyawan operasional dengan verifikasi sesi aman. |
 
-### Premium Partners
+---
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+## 🛠️ Arsitektur & Teknologi
 
-## Contributing
+- **Backend Framework**: Laravel 10.x (MVC Architecture)
+- **Language**: PHP 8.2+
+- **Database Support**: SQLite (zero-config local portable) & MySQL / MariaDB
+- **Frontend & Styling**: Blade Templating Engine, Vanilla CSS Custom Theming, SweetAlert2
+- **Authentication**: Session-based with SHA-256 hashed password verification
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+---
 
-## Code of Conduct
+## 🚀 Panduan Instalasi & Menjalankan Proyek
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+### 1. Prasyarat Sistem
+- PHP >= 8.2 dengan ekstensi `pdo_sqlite`, `mbstring`, `openssl`, `tokenizer`, `xml`, `ctype`, `json`
+- Composer 2.x
+- Git
 
-## Security Vulnerabilities
+### 2. Kloning & Pemasangan Dependensi
+```bash
+# Masuk ke direktori proyek
+cd d:/CV/CoHive
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+# Pemasangan dependensi composer
+composer install
+```
 
-## License
+### 3. Konfigurasi Lingkungan (.env)
+Salin berkas contoh atau konfigurasi berkas `.env`:
+```ini
+APP_NAME=CoHive
+APP_ENV=local
+APP_KEY=base64:...
+APP_DEBUG=true
+APP_URL=http://localhost:8002
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+DB_CONNECTION=sqlite
+# Database otomatis membaca database/database.sqlite
+```
+
+### 4. Migrasi & Pengisian Data Awal (Seeding)
+Jalankan migrasi bersih beserta seeder data komprehensif:
+```bash
+# Pastikan database sqlite tersedia
+touch database/database.sqlite
+
+# Migrasi dan jalankan database seeder
+php artisan migrate:fresh --seed --force
+```
+
+### 5. Menjalankan Server Pengembangan
+```bash
+php artisan serve --port=8002
+```
+Akses sistem di peramban web: **`http://localhost:8002`**
+
+---
+
+## 🔑 Kredensial Akun Bawaan
+
+| Role | Username | Password | Deskripsi |
+| :--- | :--- | :--- | :--- |
+| **Administrator** | `admin` | `admin123` | Akses menyeluruh ke seluruh modul manajemen, stok, dan keuangan. |
+| **Karyawan** | `budi` | `karyawan123` | Akses operasional harian dan pembaruan stok barang. |
+| **Karyawan** | `siti` | `karyawan123` | Akses pencatatan penjualan dan transaksi operasional kasir. |
+
+---
+
+## 📁 Struktur Direktori Utama
+
+```
+CoHive/
+├── app/
+│   ├── Http/
+│   │   ├── Controllers/     # AuthController, BarangController, RouteController, KeuanganController
+│   │   └── Middleware/      # LoginMiddleware, HarusLogoutMiddleware
+│   └── Models/              # Barang, Event, KeuanganAccount, KeuanganTransaction, Profile, User
+├── database/
+│   ├── migrations/          # 13 migrasi skema tabel operasional
+│   └── seeders/             # DatabaseSeeder lengkap (akun, inventaris, transaksi, agenda)
+├── resources/
+│   ├── views/               # Blade templates (dashboard, stok-barang, keuangan, dll)
+│   └── css/                 # Custom stylesheet & theme definition
+├── routes/
+│   └── web.php              # Definisi rute aplikasi
+└── portfolio-assets/        # Dokumentasi visual terkurasi
+```
+
+---
+
+*CoHive — Empowering modern collaborative business operations with seamless management.*

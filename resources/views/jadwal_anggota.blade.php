@@ -570,8 +570,9 @@
       }
     }
   </style>
+  <link rel="stylesheet" href="{{ asset('css/cohive-theme.css') }}">
 </head>
-<body>
+<body class="cohive-app">
   <div class="wrapper">
     <div class="sidebar" id="sidebar">
       <div class="profile">

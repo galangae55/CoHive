@@ -569,8 +569,9 @@
 
 
     </style>
+    <link rel="stylesheet" href="{{ asset('css/cohive-theme.css') }}">
     </head>
-    <body>
+    <body class="cohive-app">
         @if (session('error'))
         <script>
            Swal.fire({

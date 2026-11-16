@@ -18,9 +18,10 @@
   <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="icon" type="image/png" href="/img/image14.png">
     <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="{{ asset('css/cohive-theme.css') }}">
   <title>Login Page</title>
 </head>
-<body style="max-height: 100%;">
+<body class="cohive-auth">
 
     @if (session('error'))
         <script>

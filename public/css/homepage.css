@@ -235,7 +235,7 @@ nav {
 
 /* Card kiri: FOR INSTRUCTORS */
 .card.instructors {
-  background-image: url('img/Rectangle 24.png'); /* Ganti sesuai kebutuhan */
+  background-image: url('../img/Rectangle 24.png');
 }
 .card.instructors .overlay button {
   background-color: transparent;
@@ -249,7 +249,7 @@ nav {
 
 /* Card kanan: FOR STUDENTS */
 .card.students {
-  background-image: url('img/Rectangle32.png'); /* Ganti sesuai kebutuhan */
+  background-image: url('../img/Rectangle32.png');
 }
 .card.students .overlay button {
   background-color: #FACF43;

@@ -393,8 +393,9 @@
       margin-top: 10px;
     }
   </style>
+  <link rel="stylesheet" href="{{ asset('css/cohive-theme.css') }}">
 </head>
-<body>
+<body class="cohive-app">
     {{-- Tampilkan pesan SweetAlert jika session error atau success --}}
     @if (session('error'))
     <script>

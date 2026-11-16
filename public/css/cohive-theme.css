@@ -1,0 +1,1331 @@
+:root {
+  --cohive-ink: #24251f;
+  --cohive-muted: #777a72;
+  --cohive-line: #e8e6de;
+  --cohive-paper: #fff;
+  --cohive-canvas: #f7f6f2;
+  --cohive-yellow: #ffd54f;
+  --cohive-yellow-deep: #e6b91e;
+  --cohive-red: #c94b45;
+  --cohive-green: #23845b;
+}
+
+.cohive-app {
+  min-height: 100vh;
+  background: var(--cohive-canvas) !important;
+  color: var(--cohive-ink) !important;
+}
+
+.cohive-app .wrapper {
+  gap: 20px !important;
+  min-height: 100vh;
+  padding: 22px !important;
+  background: var(--cohive-canvas);
+}
+
+.cohive-app .sidebar {
+  position: sticky !important;
+  top: 22px;
+  align-self: flex-start;
+  width: 260px !important;
+  min-width: 260px;
+  height: calc(100vh - 44px);
+  overflow: auto;
+  padding: 22px 18px !important;
+  border: 0 !important;
+  border-radius: 20px !important;
+  background: var(--cohive-ink) !important;
+  box-shadow: 0 12px 30px #24251f14;
+  color: #fff;
+}
+
+.cohive-app .sidebar.closed {
+  width: 80px !important;
+  min-width: 80px;
+}
+
+.cohive-app .profile {
+  margin-bottom: 20px !important;
+  color: #fff;
+}
+
+.cohive-app .profile img {
+  border: 3px solid #ffffff24;
+  box-shadow: 0 5px 15px #00000020;
+}
+
+.cohive-app .profile h3 {
+  color: #fff;
+  font-size: 14px !important;
+  font-weight: 600;
+}
+
+.cohive-app .profile p {
+  color: #b7b8b2 !important;
+  font-size: 10px !important;
+  text-transform: capitalize;
+}
+
+.cohive-app .garis {
+  height: 1px;
+  background: #ffffff19 !important;
+  margin: 20px 0 24px !important;
+}
+
+.cohive-app .menu {
+  display: grid;
+  gap: 6px;
+}
+
+.cohive-app .menu li {
+  margin-bottom: 0 !important;
+}
+
+.cohive-app .menu a {
+  gap: 12px;
+  padding: 11px 13px !important;
+  border: 1px solid transparent;
+  border-radius: 10px !important;
+  background: transparent !important;
+  color: #c3c4bd !important;
+  font-size: 12px !important;
+  font-weight: 500 !important;
+  transition: background .18s, color .18s, transform .18s;
+}
+
+.cohive-app .menu a i {
+  width: 18px;
+  margin-right: 0 !important;
+  text-align: center;
+}
+
+.cohive-app .menu a:hover {
+  transform: translateX(2px);
+  background: #ffffff0d !important;
+  color: #fff !important;
+}
+
+.cohive-app .menu a.dash,
+.cohive-app .menu a.active {
+  border-color: #ffd54f26;
+  background: var(--cohive-yellow) !important;
+  color: var(--cohive-ink) !important;
+  font-weight: 600 !important;
+}
+
+.cohive-app .main-container {
+  min-width: 0;
+  gap: 16px !important;
+}
+
+.cohive-app .header {
+  min-height: 78px;
+  padding: 18px 24px !important;
+  border: 1px solid var(--cohive-line) !important;
+  border-radius: 16px !important;
+  background: var(--cohive-paper) !important;
+  box-shadow: 0 5px 18px #24251f07;
+}
+
+.cohive-app .header h1 {
+  color: var(--cohive-ink) !important;
+  font-size: 21px !important;
+  font-weight: 700;
+  letter-spacing: -.04em;
+}
+
+.cohive-app .logout-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 13px !important;
+  border: 1px solid var(--cohive-line) !important;
+  border-radius: 10px !important;
+  background: #fff !important;
+  color: var(--cohive-ink) !important;
+  font-size: 11px !important;
+  transition: .18s ease;
+}
+
+.cohive-app .logout-btn:hover {
+  border-color: #efc7c2 !important;
+  background: #fff8f7 !important;
+  color: var(--cohive-red) !important;
+}
+
+.cohive-app .burger-btn {
+  top: 8px !important;
+  right: 8px !important;
+  display: grid;
+  width: 34px;
+  height: 34px;
+  place-items: center;
+  padding: 0 !important;
+  border: 1px solid #ffffff1f !important;
+  border-radius: 10px !important;
+  background: #ffffff0d !important;
+  color: #fff !important;
+  cursor: pointer;
+}
+
+.cohive-app .burger-btn:hover {
+  background: #ffffff1a !important;
+}
+
+.cohive-app .shape {
+  pointer-events: none;
+  opacity: .14 !important;
+}
+
+.cohive-app .content {
+  min-width: 0;
+  border: 1px solid var(--cohive-line) !important;
+  border-radius: 16px !important;
+  background: var(--cohive-paper) !important;
+  box-shadow: 0 5px 18px #24251f07;
+}
+
+.cohive-app button,
+.cohive-app input,
+.cohive-app select,
+.cohive-app textarea {
+  font: inherit;
+}
+
+.cohive-app button,
+.cohive-app input[type="submit"] {
+  transition: transform .16s ease, box-shadow .16s ease, background .16s ease;
+}
+
+.cohive-app button:not(:disabled):hover,
+.cohive-app input[type="submit"]:hover {
+  transform: translateY(-1px);
+}
+
+.cohive-app input:not([type="checkbox"]):not([type="radio"]):not([type="file"]),
+.cohive-app select,
+.cohive-app textarea {
+  border: 1px solid #dfded7 !important;
+  border-radius: 9px !important;
+  background-color: #fff !important;
+  color: var(--cohive-ink);
+  outline: none;
+  transition: border-color .16s, box-shadow .16s;
+}
+
+.cohive-app input:focus,
+.cohive-app select:focus,
+.cohive-app textarea:focus {
+  border-color: var(--cohive-yellow-deep) !important;
+  box-shadow: 0 0 0 3px #ffd54f38;
+}
+
+.cohive-app input:disabled,
+.cohive-app select:disabled {
+  background: #f3f2ee !important;
+  color: #8a8b84 !important;
+}
+
+.cohive-app table {
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.cohive-app th {
+  background: #f8f7f3 !important;
+  color: #6f726b !important;
+  font-size: 10px !important;
+  font-weight: 600 !important;
+  letter-spacing: .03em;
+}
+
+.cohive-app td,
+.cohive-app th {
+  border-color: #eeece5 !important;
+}
+
+.cohive-app tbody tr {
+  transition: background .15s ease;
+}
+
+.cohive-app tbody tr:hover {
+  background: #fffdf6;
+}
+
+.cohive-app .anggota-container,
+.cohive-app .profile-form-wrapper,
+.cohive-app .fin-container,
+.cohive-app .dashboard-box,
+.cohive-app .mini-calendar,
+.cohive-app .daily-view,
+.cohive-app .schedule-table-container {
+  border: 1px solid var(--cohive-line) !important;
+  border-radius: 15px !important;
+  background: #fff !important;
+  box-shadow: 0 6px 20px #24251f08 !important;
+}
+
+.cohive-app .anggota-container {
+  padding: 25px !important;
+}
+
+.cohive-app .anggota-header h2,
+.cohive-app .profile-form-wrapper h2 {
+  color: var(--cohive-ink) !important;
+  font-size: 19px !important;
+  font-weight: 700;
+  letter-spacing: -.03em;
+}
+
+.cohive-app .anggota-add-btn,
+.cohive-app .profile-detail-right form .update-btn,
+.cohive-app .save-button button,
+.cohive-app .btn-yellow,
+.cohive-app .fin-add-btn {
+  border: 0 !important;
+  border-radius: 10px !important;
+  background: var(--cohive-yellow) !important;
+  color: var(--cohive-ink) !important;
+  font-weight: 600 !important;
+  box-shadow: 0 4px 10px #c59e2626;
+}
+
+.cohive-app .anggota-add-btn:hover,
+.cohive-app .save-button button:hover,
+.cohive-app .btn-yellow:hover,
+.cohive-app .fin-add-btn:hover {
+  background: #ffdf71 !important;
+  box-shadow: 0 7px 16px #c59e2633;
+}
+
+.cohive-app .anggota-card {
+  border: 1px solid var(--cohive-line) !important;
+  border-radius: 14px !important;
+  box-shadow: 0 5px 16px #24251f09 !important;
+}
+
+.cohive-app .anggota-card:hover {
+  transform: translateY(-4px);
+  border-color: #e6d58f !important;
+  box-shadow: 0 12px 24px #24251f12 !important;
+}
+
+.cohive-app .anggota-card img,
+.cohive-app .profile-detail-left img {
+  border: 3px solid #fff4cf;
+}
+
+.cohive-app .anggota-profile-btn,
+.cohive-app .profile-back-btn {
+  border-radius: 9px !important;
+  background: var(--cohive-ink) !important;
+  color: #fff !important;
+  text-decoration: none !important;
+}
+
+.cohive-app .profile-form-wrapper {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 30px !important;
+}
+
+.cohive-app .profile-form-wrapper h2 {
+  margin-bottom: 22px;
+}
+
+.cohive-app .profile-form {
+  gap: 18px !important;
+}
+
+.cohive-app .profile-form .form-group {
+  gap: 7px;
+}
+
+.cohive-app .profile-form .form-group label,
+.cohive-app .profile-detail-right form label {
+  color: #4b4d46;
+  font-size: 11px !important;
+  font-weight: 600;
+}
+
+.cohive-app .profile-form input,
+.cohive-app .profile-form select {
+  min-height: 43px;
+  padding: 10px 12px !important;
+}
+
+.cohive-app .avatar-container img {
+  border: 4px solid #fff;
+  box-shadow: 0 0 0 1px var(--cohive-line), 0 8px 18px #24251f12;
+}
+
+.cohive-app .camera-icon {
+  border: 3px solid #fff;
+  background: var(--cohive-yellow) !important;
+  color: var(--cohive-ink);
+}
+
+.cohive-app .dashboard-wrapper {
+  padding: 22px !important;
+}
+
+.cohive-app .dashboard-box {
+  gap: 0 !important;
+  overflow: hidden;
+}
+
+.cohive-app .dashboard-box .section {
+  padding: 24px !important;
+}
+
+.cohive-app .dashboard-box h2,
+.cohive-app .dashboard-box h4 {
+  color: var(--cohive-ink);
+}
+
+.cohive-app .btn-blue,
+.cohive-app .btn-gray,
+.cohive-app .btn-primary,
+.cohive-app .btn-secondary,
+.cohive-app .submit-btn,
+.cohive-app .cancel-btn {
+  border: 0 !important;
+  border-radius: 9px !important;
+  font-weight: 600 !important;
+}
+
+.cohive-app .btn-blue,
+.cohive-app .btn-primary,
+.cohive-app .submit-btn {
+  background: var(--cohive-ink) !important;
+  color: #fff !important;
+}
+
+.cohive-app .btn-gray,
+.cohive-app .btn-secondary,
+.cohive-app .cancel-btn {
+  background: #efeee9 !important;
+  color: var(--cohive-ink) !important;
+}
+
+.cohive-app .fin-container {
+  padding: 26px !important;
+}
+
+.cohive-app .fin-cards {
+  gap: 14px !important;
+}
+
+.cohive-app .fin-card {
+  border: 1px solid var(--cohive-line) !important;
+  border-radius: 13px !important;
+  box-shadow: 0 5px 16px #24251f08 !important;
+}
+
+.cohive-app .fin-card--balance .fin-card__icon,
+.cohive-app .fin-card--income .fin-card__icon,
+.cohive-app .fin-card--outcome .fin-card__icon {
+  background: #fff4ce !important;
+  color: #79600a !important;
+}
+
+.cohive-app .fin-card__info .fin-card__label {
+  color: var(--cohive-muted) !important;
+  font-size: 10px !important;
+}
+
+.cohive-app .fin-card__info .fin-card__value {
+  color: var(--cohive-ink);
+  font-size: 17px !important;
+}
+
+.cohive-app .fin-tab--active {
+  color: #725b0c !important;
+}
+
+.cohive-app .fin-tab--active::after {
+  background: var(--cohive-yellow) !important;
+}
+
+.cohive-app .fin-table {
+  border: 1px solid var(--cohive-line);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.cohive-app .modal-content,
+.cohive-app .popup-content {
+  border: 1px solid var(--cohive-line) !important;
+  border-radius: 16px !important;
+  box-shadow: 0 20px 60px #17181230 !important;
+}
+
+.cohive-app .modal-header,
+.cohive-app .modal-footer {
+  border-color: var(--cohive-line) !important;
+}
+
+.cohive-app .calendar-container {
+  gap: 16px !important;
+}
+
+.cohive-app .mini-calendar,
+.cohive-app .daily-view {
+  overflow: hidden;
+}
+
+.cohive-app .calendar-header,
+.cohive-app .daily-header,
+.cohive-app .table-header {
+  border-color: var(--cohive-line) !important;
+  background: #fff !important;
+  color: var(--cohive-ink) !important;
+}
+
+.cohive-app .calendar-nav button,
+.cohive-app .daily-nav button {
+  border: 1px solid var(--cohive-line) !important;
+  border-radius: 8px !important;
+  background: #fff !important;
+  color: var(--cohive-ink) !important;
+}
+
+.cohive-app .calendar-nav button:hover,
+.cohive-app .daily-nav button:hover {
+  background: #fff5d2 !important;
+}
+
+.cohive-app .modal,
+.cohive-app .popup {
+  backdrop-filter: blur(4px);
+}
+
+.cohive-app .header .shape {
+  z-index: 0;
+}
+
+.cohive-auth {
+  min-height: 100vh;
+  overflow-x: hidden;
+  font-family: Poppins, sans-serif;
+  background:
+    radial-gradient(ellipse at 10% 12%, #ffd54f45, transparent 34%),
+    var(--cohive-canvas);
+}
+
+.cohive-auth *,
+.cohive-auth *::before,
+.cohive-auth *::after {
+  font-family: Poppins, sans-serif;
+}
+
+.cohive-auth .ScaledContainer {
+  display: flex;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  padding: 28px;
+  transform: none !important;
+}
+
+.cohive-auth .LoginContainer {
+  width: min(1120px, 100%);
+  max-width: 1120px !important;
+  height: 680px !important;
+  gap: clamp(30px, 6vw, 82px) !important;
+  overflow: hidden;
+  padding: 26px !important;
+  border: 1px solid var(--cohive-line);
+  border-radius: 24px;
+  background: #fff !important;
+  box-shadow: 0 24px 70px #24251f14;
+}
+
+.cohive-auth .Image14 {
+  width: min(53%, 580px) !important;
+  height: 100% !important;
+  object-fit: cover;
+  border-radius: 18px !important;
+}
+
+.cohive-auth .Group230 {
+  flex: 0 1 420px;
+  width: min(420px, 46%) !important;
+  height: 600px !important;
+}
+
+.cohive-auth .Group223 {
+  left: 50% !important;
+  transform: translateX(-50%);
+}
+
+.cohive-auth .Group222 {
+  background: #f2f1ec !important;
+}
+
+.cohive-auth .LoginButton,
+.cohive-auth .RegisterButton {
+  color: var(--cohive-ink) !important;
+  cursor: pointer;
+}
+
+.cohive-auth .Rectangle78 {
+  background: var(--cohive-yellow) !important;
+}
+
+.cohive-auth .WelcomeToCohive {
+  color: var(--cohive-ink) !important;
+  font-weight: 600 !important;
+}
+
+.cohive-auth .Group228 {
+  width: 100% !important;
+}
+
+.cohive-auth .Group228 .LoremIpsum {
+  color: var(--cohive-muted) !important;
+  font-size: 12px !important;
+}
+
+.cohive-auth .Rectangle80 {
+  border-color: #dfded7 !important;
+  border-radius: 12px !important;
+  background: #fff !important;
+}
+
+.cohive-auth .Group225,
+.cohive-auth .Group227,
+.cohive-auth .Group232 {
+  width: 100% !important;
+}
+
+.cohive-auth .inputField {
+  width: calc(100% - 34px) !important;
+  border: 0 !important;
+  border-radius: 10px !important;
+  box-shadow: none !important;
+}
+
+.cohive-auth .inputField:focus {
+  outline: 2px solid #ffd54f75;
+}
+
+.cohive-auth .btnRegister button {
+  border-radius: 12px !important;
+  background: var(--cohive-ink) !important;
+  box-shadow: 0 7px 16px #24251f20;
+  font-weight: 600 !important;
+  cursor: pointer;
+}
+
+.cohive-auth .btnRegister button:hover {
+  background: #3a3b34 !important;
+}
+
+.cohive-landing {
+  background: var(--cohive-canvas);
+  color: var(--cohive-ink);
+}
+
+.cohive-landing nav {
+  padding: 14px clamp(18px, 5vw, 64px);
+  border-bottom: 1px solid #ffffff20;
+  background: #24251fee;
+  backdrop-filter: blur(14px);
+}
+
+.cohive-landing .logo {
+  padding: 8px 12px;
+  font-size: 27px;
+  letter-spacing: -.05em;
+}
+
+.cohive-landing .nav-links {
+  gap: clamp(16px, 3vw, 36px);
+}
+
+.cohive-landing .nav-links li a {
+  font-size: 13px;
+}
+
+.cohive-landing .login-btn,
+.cohive-landing .signup-btn {
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-size: 12px;
+}
+
+.cohive-landing .signup-btn {
+  background: var(--cohive-yellow);
+  color: var(--cohive-ink);
+}
+
+.cohive-landing .content-container {
+  min-height: 660px;
+  padding: 160px clamp(24px, 8vw, 110px) 90px;
+  background: linear-gradient(110deg, #24251f 0%, #24251f 66%, #ffd54f 66%);
+}
+
+.cohive-landing .content-left h1 {
+  max-width: 590px;
+  color: #fff;
+  font-size: clamp(32px, 5vw, 54px);
+  letter-spacing: -.05em;
+}
+
+.cohive-landing .note {
+  max-width: 540px;
+  font-size: 15px;
+}
+
+.cohive-landing .content-left a {
+  border-radius: 10px;
+  color: var(--cohive-ink);
+}
+
+.cohive-landing .whatIsCoHive {
+  padding: 86px 24px 54px;
+}
+
+.cohive-landing .whatIsCoHive .title {
+  font-size: clamp(30px, 4vw, 42px);
+  letter-spacing: -.05em;
+}
+
+.cohive-landing .description {
+  font-size: 14px;
+}
+
+.cohive-landing .cards-container {
+  padding: 24px 24px 70px;
+}
+
+.cohive-landing .cards-container .card {
+  max-width: 480px;
+  border-radius: 18px;
+}
+
+.cohive-landing .cards-container .card {
+  cursor: default;
+  background-image: none !important;
+}
+
+.cohive-landing .cards-container .overlay {
+  gap: 12px;
+  background: transparent;
+}
+
+.cohive-landing .cards-container .card.instructors {
+  border: 1px solid #ffffff24;
+  background-color: #24251f;
+  box-shadow: 0 12px 28px #24251f20;
+}
+
+.cohive-landing .cards-container .card.students {
+  border: 1px solid #eed271;
+  background-color: #ffdf71;
+  box-shadow: 0 12px 28px #b58b1620;
+}
+
+.cohive-landing .cards-container .card.students .overlay h2 {
+  color: #725b0c;
+}
+
+.cohive-landing .cards-container .card.students .overlay p {
+  color: #4a432d;
+}
+
+.cohive-landing .cards-container .card.students .overlay a {
+  border-color: var(--cohive-ink);
+  background: var(--cohive-ink);
+  color: #fff;
+}
+
+.cohive-landing .cards-container .card.students .overlay a:hover {
+  background: #fff;
+  color: var(--cohive-ink);
+}
+
+.cohive-landing .cards-container .overlay h2 {
+  margin: 0;
+  color: var(--cohive-yellow);
+  font-size: 15px;
+  letter-spacing: .08em;
+}
+
+.cohive-landing .cards-container .overlay p {
+  max-width: 330px;
+  margin: 0;
+  color: #fff;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.cohive-landing .cards-container .overlay a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  padding: 10px 18px;
+  border: 1px solid #ffffffa6;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background .18s, color .18s, transform .18s;
+}
+
+.cohive-landing .cards-container .overlay a:hover {
+  transform: translateY(-2px);
+  background: #fff;
+  color: var(--cohive-ink);
+}
+
+.cohive-landing .feature-section {
+  background: var(--cohive-yellow);
+}
+
+.cohive-landing .feature-content h2 {
+  color: var(--cohive-ink);
+  font-size: clamp(24px, 3vw, 34px);
+  letter-spacing: -.04em;
+}
+
+.cohive-landing .feature-content p {
+  color: #514a35;
+  font-size: 13px;
+}
+
+.cohive-landing .tools-section,
+.cohive-landing .articles-section {
+  padding-top: 70px;
+  padding-bottom: 70px;
+}
+
+.cohive-landing .tools-wrapper {
+  gap: clamp(28px, 6vw, 72px);
+  margin-bottom: 64px;
+}
+
+.cohive-landing .tools-wrapper:last-child {
+  margin-bottom: 0;
+}
+
+.cohive-landing .tools-text h2 {
+  max-width: 520px;
+  font-size: clamp(25px, 3vw, 36px);
+  letter-spacing: -.04em;
+}
+
+.cohive-landing .tools-text h2 span {
+  color: #bd9412;
+}
+
+.cohive-landing .tools-text p {
+  color: #62645e;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.cohive-landing .tools-image img {
+  max-height: 350px;
+  object-fit: contain;
+}
+
+.cohive-landing .workflow-visual {
+  width: min(100%, 430px);
+  min-height: 250px;
+  padding: 18px;
+  border: 1px solid #e8e4d8;
+  border-radius: 18px;
+  background: #fff;
+  box-shadow: 0 18px 45px #24251f12;
+  transform: rotate(-1.5deg);
+}
+
+.cohive-landing .visual-topbar {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #efeee9;
+}
+
+.cohive-landing .visual-topbar > span {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #deddd6;
+}
+
+.cohive-landing .visual-topbar > span:first-child {
+  background: var(--cohive-yellow-deep);
+}
+
+.cohive-landing .visual-topbar b {
+  margin-left: 9px;
+  color: var(--cohive-ink);
+  font-size: 10px;
+}
+
+.cohive-landing .visual-member,
+.cohive-landing .visual-event,
+.cohive-landing .visual-stat {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 12px;
+  padding: 12px;
+  border: 1px solid #f0eee8;
+  border-radius: 11px;
+  background: #fffefa;
+  color: #8c7631;
+}
+
+.cohive-landing .visual-member > i:first-child,
+.cohive-landing .visual-stat > i:first-child {
+  font-size: 23px;
+}
+
+.cohive-landing .visual-member span,
+.cohive-landing .visual-stat span {
+  display: grid;
+  flex: 1;
+  gap: 3px;
+}
+
+.cohive-landing .visual-member b,
+.cohive-landing .visual-stat b,
+.cohive-landing .visual-event b {
+  color: var(--cohive-ink);
+  font-size: 10px;
+}
+
+.cohive-landing .visual-member small,
+.cohive-landing .visual-stat small {
+  color: var(--cohive-muted);
+  font-size: 8px;
+}
+
+.cohive-landing .visual-member > i:last-child,
+.cohive-landing .visual-stat > i:last-child {
+  color: var(--cohive-green);
+  font-size: 11px;
+}
+
+.cohive-landing .visual-foot {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 13px;
+  padding: 11px 12px;
+  border-radius: 9px;
+  background: #fff5d2;
+  color: #66520e;
+  font-size: 9px;
+  font-weight: 600;
+}
+
+.cohive-landing .visual-calendar-head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 15px 2px 6px;
+  color: #8c7631;
+  font-size: 12px;
+}
+
+.cohive-landing .visual-calendar-head b {
+  flex: 1;
+  color: var(--cohive-ink);
+  font-size: 10px;
+}
+
+.cohive-landing .visual-calendar-head span {
+  color: var(--cohive-muted);
+  font-size: 8px;
+}
+
+.cohive-landing .visual-event {
+  gap: 10px;
+  padding: 11px;
+}
+
+.cohive-landing .visual-event span {
+  color: var(--cohive-muted);
+  font-size: 9px;
+}
+
+.cohive-landing .visual-event b {
+  flex: 1;
+}
+
+.cohive-landing .visual-event i {
+  color: var(--cohive-yellow-deep);
+  font-size: 8px;
+}
+
+.cohive-landing .workflow-inventory .visual-stat {
+  min-height: 62px;
+}
+
+.cohive-landing .module-art {
+  display: grid;
+  height: 170px;
+  place-items: center;
+  background: #fff5d2;
+  color: #8b6d0b;
+  font-size: 44px;
+}
+
+.cohive-landing .module-calendar {
+  background: #f3f1e7;
+  color: #36372f;
+}
+
+.cohive-landing .module-stock {
+  background: #ffe8ad;
+}
+
+.cohive-landing .module-finance {
+  background: #eeece3;
+  color: #4d4e44;
+}
+
+.cohive-landing .articles-section {
+  background: #f7f6f2;
+}
+
+.cohive-landing .articles-section .header {
+  align-items: end;
+}
+
+.cohive-landing .articles-section .header h2 {
+  margin: 0;
+  color: var(--cohive-ink);
+  font-size: 27px;
+  letter-spacing: -.04em;
+}
+
+.cohive-landing .modules-intro {
+  margin: 7px 0 0;
+  color: var(--cohive-muted);
+  font-size: 12px;
+}
+
+.cohive-landing .articles-section .see-all {
+  color: #725b0c;
+  font-size: 12px;
+}
+
+.cohive-landing .card-1 {
+  border: 1px solid var(--cohive-line);
+  border-radius: 14px;
+  box-shadow: 0 6px 20px #24251f09;
+}
+
+.cohive-landing .card-1:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 13px 26px #24251f12;
+}
+
+.cohive-landing .card-image img {
+  height: 190px;
+}
+
+.cohive-landing .card-body {
+  padding: 18px;
+}
+
+.cohive-landing .meta {
+  color: #725b0c;
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.cohive-landing .card-title {
+  color: var(--cohive-ink);
+  font-size: 16px;
+}
+
+.cohive-landing .card-desc {
+  margin: 0;
+  color: var(--cohive-muted);
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.cohive-landing .footer {
+  padding: 54px 20px 28px;
+  background: var(--cohive-ink);
+}
+
+.cohive-landing .cohive-text {
+  margin-bottom: 12px;
+}
+
+.cohive-landing .subscribe-text {
+  color: #d3d3cc;
+  font-size: 13px;
+}
+
+.cohive-landing .footer-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin: 8px 0 24px;
+  padding: 12px 17px;
+  border-radius: 10px;
+  background: var(--cohive-yellow);
+  color: var(--cohive-ink);
+  font-size: 11px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform .18s, background .18s;
+}
+
+.cohive-landing .footer-cta:hover {
+  transform: translateY(-2px);
+  background: #ffdf71;
+}
+
+.cohive-landing .footer-links {
+  gap: 26px;
+  margin: 16px 0 20px;
+}
+
+.cohive-landing .footer-links a {
+  font-size: 11px;
+}
+
+.cohive-landing .copyright {
+  margin: 0;
+  font-size: 10px;
+}
+
+@media (max-width: 900px) {
+  .cohive-app .sidebar {
+    width: 220px !important;
+    min-width: 220px;
+  }
+
+  .cohive-app .sidebar.closed {
+    width: 80px !important;
+    min-width: 80px;
+  }
+
+  .cohive-auth .Image14 {
+    width: 44% !important;
+  }
+
+  .cohive-auth .Group230 {
+    width: min(420px, 52%) !important;
+  }
+
+  .cohive-landing .content-container {
+    min-height: 560px;
+    padding-top: 135px;
+  }
+}
+
+@media (max-width: 680px) {
+  .cohive-app .wrapper {
+    display: block;
+    padding: 12px !important;
+  }
+
+  .cohive-app .sidebar,
+  .cohive-app .sidebar.closed {
+    position: static !important;
+    width: auto !important;
+    min-width: 0;
+    height: auto;
+    margin-bottom: 12px;
+    padding: 14px !important;
+    border-radius: 16px !important;
+  }
+
+  .cohive-app .sidebar .profile {
+    display: none;
+  }
+
+  .cohive-app .sidebar .menu {
+    display: flex;
+    gap: 5px;
+    overflow-x: auto;
+  }
+
+  .cohive-app .sidebar .menu li {
+    flex: 0 0 auto;
+  }
+
+  .cohive-app .sidebar .menu a,
+  .cohive-app .sidebar.closed .menu a {
+    justify-content: center;
+    padding: 10px !important;
+    font-size: 0 !important;
+  }
+
+  .cohive-app .sidebar .menu a i {
+    width: 18px;
+    margin: 0 !important;
+    font-size: 14px;
+  }
+
+  .cohive-app .sidebar .menu-text {
+    display: none !important;
+  }
+
+  .cohive-app .main-container {
+    gap: 12px !important;
+  }
+
+  .cohive-app .header {
+    min-height: 64px;
+    padding: 14px 16px !important;
+  }
+
+  .cohive-app .header h1 {
+    font-size: 18px !important;
+  }
+
+  .cohive-app .content {
+    padding: 12px !important;
+  }
+
+  .cohive-app .anggota-container,
+  .cohive-app .fin-container,
+  .cohive-app .profile-form-wrapper {
+    padding: 16px !important;
+  }
+
+  .cohive-app .anggota-header {
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .cohive-app .anggota-card-grid {
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)) !important;
+  }
+
+  .cohive-app .dashboard-wrapper {
+    padding: 8px !important;
+  }
+
+  .cohive-app .dashboard-box {
+    display: block !important;
+  }
+
+  .cohive-app .dashboard-box .section {
+    padding: 16px !important;
+  }
+
+  .cohive-app .calendar-container {
+    flex-direction: column;
+  }
+
+  .cohive-app .mini-calendar {
+    width: 100% !important;
+  }
+
+  .cohive-auth .ScaledContainer {
+    padding: 14px;
+  }
+
+  .cohive-auth .LoginContainer {
+    height: 650px !important;
+    padding: 18px !important;
+  }
+
+  .cohive-auth .Image14 {
+    display: none;
+  }
+
+  .cohive-auth .Group230 {
+    width: min(420px, 100%) !important;
+    flex-basis: 100%;
+  }
+
+  .cohive-landing nav {
+    padding: 10px 14px;
+  }
+
+  .cohive-landing .logo {
+    padding: 7px;
+    font-size: 23px;
+  }
+
+  .cohive-landing .content-container {
+    min-height: 0;
+    flex-direction: column;
+    gap: 32px;
+    padding: 110px 24px 52px;
+    background: linear-gradient(180deg, #24251f 0%, #24251f 72%, #ffd54f 72%);
+  }
+
+  .cohive-landing .content-left,
+  .cohive-landing .content-right {
+    width: 100%;
+  }
+
+  .cohive-landing .content-left h1 {
+    font-size: 34px;
+  }
+
+  .cohive-landing .whatIsCoHive {
+    padding: 55px 18px 30px;
+  }
+
+  .cohive-landing .tools-section {
+    padding: 48px 20px;
+  }
+
+  .cohive-landing .tools-wrapper {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .cohive-landing .tools-wrapper:nth-child(even) {
+    flex-direction: column-reverse;
+  }
+
+  .cohive-landing .tools-wrapper {
+    margin-bottom: 44px;
+  }
+
+  .cohive-landing .tools-text,
+  .cohive-landing .tools-image {
+    width: 100%;
+    padding: 0 !important;
+  }
+
+  .cohive-landing .articles-section .header {
+    align-items: flex-start;
+  }
+
+  .cohive-landing .articles-section .header h2 {
+    font-size: 23px;
+  }
+
+  .cohive-landing .modules-intro {
+    max-width: 220px;
+    line-height: 1.6;
+  }
+
+  .cohive-landing .footer-links {
+    flex-wrap: wrap;
+    gap: 14px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cohive-app *,
+  .cohive-app *::before,
+  .cohive-app *::after,
+  .cohive-landing *,
+  .cohive-auth * {
+    scroll-behavior: auto !important;
+    transition-duration: .01ms !important;
+  }
+}
